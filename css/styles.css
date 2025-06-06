@@ -434,8 +434,8 @@ footer .social-icon a:hover {
   animation: fade 1s ease-in-out;
   color: #ff3c3c;
   font-weight: 600;
-  font-size: 40px;
-  margin-top: 15px;
+  font-size: 60px;
+  margin-top: 5px;
 
   /* Add these to prevent layout shift */
   width: 200px;           /* fixed width wide enough for all roles */
