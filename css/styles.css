@@ -434,7 +434,7 @@ footer .social-icon a:hover {
   animation: fade 1s ease-in-out;
   color: #ff3c3c;
   font-weight: 600;
-  font-size: 30px; /* Increased from 28px */
+  font-size: 20px; /* Increased from 28px */
   margin-top: 15px;
 }
   /* About Section: stack columns vertically */
