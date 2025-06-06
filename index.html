@@ -271,6 +271,17 @@
     adjustFontSize();
     $(window).on("resize", adjustFontSize);
   });
+
+  $(document).ready(function () {
+    $('.smoothScroll').on('click', function (e) {
+      e.preventDefault(); // Prevent default anchor jump
+      const target = $(this).attr('href'); // Get target from href
+      
+      $('html, body').animate({
+        scrollTop: $(target).offset().top
+      }, 800); // 800ms duration for smooth scroll
+    });
+  });
 </script>
 
 
