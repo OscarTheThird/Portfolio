@@ -33,7 +33,9 @@
         <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
           <h3>Hi! I'm,</h3>
           <h1>Oscar</h1>
-          <h2 class="rotate fade-text"><span id="role-text"></span></h2>
+          <div class="role-wrapper">
+            <h2 class="rotate fade-text"><span id="role-text"></span></h2>
+          </div>
           <p>a passionate software developer with a focus on backend coding, machine learning, and mobile app development.</p>
           <a href="#work" class="btn btn-default smoothScroll" data-aos="fade-up" data-aos-delay="1000">Get started</a>
         </div>
@@ -236,30 +238,41 @@
 
 <script>
   $(document).ready(function () {
-    const roles = ["DATA SCIENTIST", "DEVELOPER", "PROJECT LEADER"];
+    const roles = [
+      "DATA SCIENTIST",
+      "BACKEND CODER",
+      "MOBILE APP DEVELOPER",
+      "AI & ML ENTHUSIAST",
+    ];
     let current = 0;
 
+    function adjustFontSize() {
+      const el = document.getElementById("role-text");
+      const wrapper = el.parentElement;
+      let fontSize = 40;
+      el.style.fontSize = fontSize + "px";
+
+      while ((el.scrollHeight > wrapper.clientHeight || el.scrollWidth > wrapper.clientWidth) && fontSize > 12) {
+        fontSize--;
+        el.style.fontSize = fontSize + "px";
+      }
+    }
+
     function rotateRole() {
-      $('#role-text').fadeOut(500, function () {
-        $(this).text(roles[current]).fadeIn(500);
+      $("#role-text").fadeOut(300, function () {
+        $(this).text(roles[current]).fadeIn(300, function () {
+          adjustFontSize();
+        });
       });
       current = (current + 1) % roles.length;
     }
 
-    setInterval(rotateRole, 1500);
-  });
-
-  $(document).ready(function () {
-    $('.smoothScroll').on('click', function (e) {
-      e.preventDefault(); // Prevent default anchor jump
-      const target = $(this).attr('href'); // Get target from href
-      
-      $('html, body').animate({
-        scrollTop: $(target).offset().top
-      }, 800); // 800ms duration for smooth scroll
-    });
+    setInterval(rotateRole, 2000);
+    adjustFontSize();
+    $(window).on("resize", adjustFontSize);
   });
 </script>
+
 
 <!-- AOS JS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -286,9 +299,9 @@
         });
     });
     });
-
+    
 
 </script>
-
+<script src="script.js"></script>
 </body>
 </html>
