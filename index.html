@@ -37,7 +37,7 @@
             <h2 class="rotate fade-text" data-aos="fade-up" data-aos-delay="600"><span id="role-text" >DATA SCIENTIST</span></h2>
           </div>
           <p>a passionate software developer with a focus on backend coding, machine learning, and mobile app development.</p>
-          <a href="#work" class="btn btn-default smoothScroll" data-aos="fade-up" data-aos-delay="1000">Get started</a>
+          <a href="assets/files/Oscar T. Maribojoc III CV.pdf" class="btn btn-default smoothScroll" download data-aos="fade-up" data-aos-delay="1000">Download CV</a>
         </div>
         <div class="col-md-2"></div>
       </div>
@@ -193,7 +193,6 @@
         <div class="col-lg-5 col-lg-offset-1 col-md-6" data-aos="fade-up" data-aos-delay="400">
           <address>
             <p class="contact-title">CONTACT ME</p>
-            <p id="contact-text"><i class="fas fa-phone"></i> 09279185993</p>
             <p id="contact-text"><i class="fas fa-envelope"></i> oscartmaribojociii@gmail.com</p>
             <p id="contact-text"><i class="fas fa-map-marker"></i> Catbalogan City, Samar</p>
           </address>
@@ -272,16 +271,7 @@
     $(window).on("resize", adjustFontSize);
   });
 
-  $(document).ready(function () {
-    $('.smoothScroll').on('click', function (e) {
-      e.preventDefault(); // Prevent default anchor jump
-      const target = $(this).attr('href'); // Get target from href
-      
-      $('html, body').animate({
-        scrollTop: $(target).offset().top
-      }, 800); // 800ms duration for smooth scroll
-    });
-  });
+  
 </script>
 
 
